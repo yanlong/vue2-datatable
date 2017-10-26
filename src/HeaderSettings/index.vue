@@ -2,7 +2,7 @@
   <div class="btn-group" name="HeaderSettings">
     <button class="btn btn-default dropdown-toggle" ref="dropdownBtn">
       <i class="fa" :class="[usingBak && 'text-info', processingCls || 'fa-cog']"></i>
-      <span class="caret"></span>
+      <span class="fa fa-caret"></span>
     </button>
     <div class="dropdown-menu clearfix" :style="drpMenuStyle">
       <div class="-col-group-container">
@@ -18,7 +18,7 @@
           </button>
           <template v-if="supportBackup">
             <button data-toggle="dropdown" class="btn btn-default dropdown-toggle" style="box-shadow: none">
-              <span class="caret"></span>
+              <span class="fa fa-caret"></span>
             </button>
             <ul class="dropdown-menu">
               <li @click="apply(true)">
