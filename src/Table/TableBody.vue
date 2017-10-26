@@ -24,7 +24,7 @@
         </tr>
         <transition name="fade">
           <tr v-if="item.__nested__ && item.__nested__.visible">
-            <td :colspan="colLen">
+            <td :colspan="colLen" class="-nested-comp-td">
               <!-- nested component -->
               <component
                 :is="forDynCompIs(item.__nested__.comp)"
