@@ -1,6 +1,6 @@
 <template>
   <label name="PageSizeSelect">
-    <select class="form-control input-sm -page-size-select" v-model="query.limit"
+    <select class="input-sm -page-size-select" v-model="query.limit"
       @change="query.offset = 0 /* reset to the first page */">
       <option v-for="i in pageSizeOptions" :value="i">{{ i }}</option>
     </select>
