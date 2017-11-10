@@ -3,7 +3,8 @@
   "description": "The best Datatable for Vue.js 2.x which never sucks",
   "version": "2.1.17",
   "main": "dist/min.js",
-  "module": "src/main.js",
+  "module": "dist/min.js",
+  // "module": "src/main.js",
   "author": "Ken Berkeley <kenberkeley@foxmail.com>",
   "files": [
     "dist",

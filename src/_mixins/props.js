@@ -6,6 +6,7 @@ export default {
     query: { type: Object, required: true },
     selection: Array, // container for multi-select
     summary: Object, // an extra summary row
+    row: Object, // an extra summary row
     xprops: Object, // extra custom props carrier passed to dynamic components
     HeaderSettings: { type: Boolean, default: true }, // whether to render `HeaderSettings`
     Pagination: { type: Boolean, default: true }, // whether to render `PageSizeSelect` and `Pagination`
