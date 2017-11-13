@@ -4,7 +4,7 @@
   "version": "2.1.17",
   "main": "dist/min.js",
   "module": "dist/min.js",
-  // "module": "src/main.js",
+  "module": "src/main.js",
   "author": "Ken Berkeley <kenberkeley@foxmail.com>",
   "files": [
     "dist",

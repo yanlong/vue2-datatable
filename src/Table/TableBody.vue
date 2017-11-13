@@ -2,7 +2,7 @@
   <tbody>
     <template v-if="data.length">
       <template v-for="item in data">
-        <tr>
+        <tr :key="item.id">
           <td v-if="shouldRenderSelection">
             <multi-select :selection="selection" :row="item" />
           </td>
@@ -23,7 +23,7 @@
           </td>
         </tr>
         <transition name="fade">
-          <tr v-if="item.__nested__ && item.__nested__.visible">
+          <tr v-if="item.__nested__ && item.__nested__.visible" :key="item.id">
             <td :colspan="colLen" class="-nested-comp-td">
               <!-- nested component -->
               <component
