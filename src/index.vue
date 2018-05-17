@@ -6,18 +6,19 @@
       </header-settings>
       <slot />
     </div>
+    <slot name="table">
+      <tbl v-bind="$props" />
 
-    <tbl v-bind="$props" />
-    
-    <div v-if="Pagination" class="row" style="margin-top: 10px">
-      <div class="col-sm-6" style="white-space: nowrap">
-        <strong>
-          {{ $i18nForDatatable('Total') }} {{ total }} {{ $i18nForDatatable(',') }}
-        </strong>
-        <page-size-select :query="query" :page-size-options="pageSizeOptions" />
-      </div>
-      <div class="col-sm-6">
-        <pagination class="pull-right" :total="total" :query="query" />
+      <div v-if="Pagination" class="row" style="margin-top: 10px">
+        <div class="col-sm-6" style="white-space: nowrap">
+          <strong>
+            {{ $i18nForDatatable('Total') }} {{ total }} {{ $i18nForDatatable(',') }}
+          </strong>
+          <page-size-select :query="query" :page-size-options="pageSizeOptions" />
+        </div>
+        <div class="col-sm-6">
+          <pagination class="pull-right" :total="total" :query="query" />
+        </div>
       </div>
     </div>
   </div>
