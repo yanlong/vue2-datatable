@@ -20,7 +20,7 @@
           <pagination class="pull-right" :total="total" :query="query" />
         </div>
       </div>
-    </div>
+    </slot>
   </div>
 </template>
 <script>
