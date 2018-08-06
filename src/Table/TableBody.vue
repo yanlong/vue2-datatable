@@ -39,7 +39,7 @@
     </template>
     <tr v-else-if="!leftFixed && !rightFixed">
       <td :colspan="colLen" class="text-center text-muted">
-        ( {{ $i18nForDatatable('No Data') }} )
+        <i class='table-loading-icon'></i>
       </td>
     </tr>
   </tbody>
@@ -53,6 +53,9 @@ export default {
   name: 'TableBody',
   components: { MultiSelect },
   mixins: [props, shouldRenderSelection],
+  updated: function(){
+        $('.table-loading-icon').replaceWith('（No Data）');
+  },
   computed: {
     colLen () {
       return this.columns.length + !!this.selection
@@ -60,3 +63,63 @@ export default {
   }
 }
 </script>
+<style>
+.table-loading-icon {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    --webkit-animation: spin 2s infinite linear;
+    -moz-animation: spin 2s infinite linear;
+    -o-animation: spin 2s infinite linear;
+    animation: spin 2s infinite linear;
+    text-align: center;
+    color: #7396DC!important;
+    font-size: 125%!important;
+}
+.table-loading-icon:before {
+    content: "\F110";
+}
+@-moz-keyframes spin {
+  0% {
+    -moz-transform: rotate(0deg);
+  }
+  100% {
+    -moz-transform: rotate(359deg);
+  }
+}
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(359deg);
+  }
+}
+@-o-keyframes spin {
+  0% {
+    -o-transform: rotate(0deg);
+  }
+  100% {
+    -o-transform: rotate(359deg);
+  }
+}
+@-ms-keyframes spin {
+  0% {
+    -ms-transform: rotate(0deg);
+  }
+  100% {
+    -ms-transform: rotate(359deg);
+  }
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(359deg);
+  }
+}
+</style>
