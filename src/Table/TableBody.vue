@@ -13,6 +13,7 @@
               :is="forDynCompIs(col.tdComp)"
               :row="item"
               :field="col.field"
+              :column="col"
               :value="item[col.field]"
               :nested="item.__nested__"
               v-bind="$props">
