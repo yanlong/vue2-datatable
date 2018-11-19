@@ -5,7 +5,7 @@ export default {
   },
   computed: {
     shouldRenderSelection () {
-      return !this.rightFixed && this.selection
+      return !this.disableSelection && !this.rightFixed && this.selection
     }
   }
 }
